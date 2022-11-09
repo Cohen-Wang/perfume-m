@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import './style.css'
+import './style/style.css'
 import { create, NButton} from 'naive-ui'
 import App from './App.vue'
 
