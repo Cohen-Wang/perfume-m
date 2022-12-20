@@ -6,7 +6,7 @@ import App from './App.vue'
 import router from '@/router'
 // 引入【样式】
 import '@/style/style.css'
-import '@/style/tailwind.css'
+// import '@/style/tailwind.css'
 
 
 
