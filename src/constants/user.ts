@@ -1,6 +1,5 @@
 import { h } from 'vue'
-import { NButton, NSpace, NTag } from 'naive-ui'
-import moment from 'moment'
+import { NButton, NSpace, NTag, NTime } from 'naive-ui'
 import type { IUser } from '@/type/interface/user'
 import { EStatus } from '@/type/enum/common'
 // +--------------------------------------------------
@@ -11,6 +10,10 @@ import { EStatus } from '@/type/enum/common'
  * 表头
  */
 export const DEFAULT_COLUMNS = [
+  {
+    type: 'selection',
+    width: 55
+  },
   {
     title: 'ID',
     key: 'id'
@@ -36,14 +39,18 @@ export const DEFAULT_COLUMNS = [
     title: '创建时间',
     key: 'createTime',
     render(row: IUser) {
-      return moment(row.createTime).format('YYYY-MM-DD HH:mm:ss')
+      return h(NTime, {
+        time: row.createTime
+      })
     }
   },
   {
     title: '修改时间',
     key: 'updateTime',
     render(row: IUser) {
-      return moment(row.updateTime).format('YYYY-MM-DD HH:mm:ss')
+      return h(NTime, {
+        time: row.createTime
+      })
     }
   },
   {
@@ -100,150 +107,23 @@ export const DEFAULT_TABLE_DATA: IUser[] = [
     updateTime: Date.now(),
   },
   {
-    id: '1',
+    id: '2',
     username: 'zhangsan',
     realName: '张三',
     email: 'zhangsan@qq.com',
     mobile: '13612345678',
+    status: EStatus.START,
+    createTime: Date.now(),
+    updateTime: Date.now(),
   },
   {
-    id: '1',
+    id: '3',
     username: 'zhangsan',
     realName: '张三',
     email: 'zhangsan@qq.com',
     mobile: '13612345678',
-  },
-  {
-    id: '1',
-    username: 'zhangsan',
-    realName: '张三',
-    email: 'zhangsan@qq.com',
-    mobile: '13612345678',
-  },
-  {
-    id: '1',
-    username: 'zhangsan',
-    realName: '张三',
-    email: 'zhangsan@qq.com',
-    mobile: '13612345678',
-  },
-  {
-    id: '1',
-    username: 'zhangsan',
-    realName: '张三',
-    email: 'zhangsan@qq.com',
-    mobile: '13612345678',
-  },
-  {
-    id: '1',
-    username: 'zhangsan',
-    realName: '张三',
-    email: 'zhangsan@qq.com',
-    mobile: '13612345678',
-  },
-  {
-    id: '1',
-    username: 'zhangsan',
-    realName: '张三',
-    email: 'zhangsan@qq.com',
-    mobile: '13612345678',
-  },
-  {
-    id: '1',
-    username: 'zhangsan',
-    realName: '张三',
-    email: 'zhangsan@qq.com',
-    mobile: '13612345678',
-  },
-  {
-    id: '1',
-    username: 'zhangsan',
-    realName: '张三',
-    email: 'zhangsan@qq.com',
-    mobile: '13612345678',
-  },
-  {
-    id: '1',
-    username: 'zhangsan',
-    realName: '张三',
-    email: 'zhangsan@qq.com',
-    mobile: '13612345678',
-  },
-  {
-    id: '1',
-    username: 'zhangsan',
-    realName: '张三',
-    email: 'zhangsan@qq.com',
-    mobile: '13612345678',
-  },
-  {
-    id: '1',
-    username: 'zhangsan',
-    realName: '张三',
-    email: 'zhangsan@qq.com',
-    mobile: '13612345678',
-  },
-  {
-    id: '1',
-    username: 'zhangsan',
-    realName: '张三',
-    email: 'zhangsan@qq.com',
-    mobile: '13612345678',
-  },
-  {
-    id: '1',
-    username: 'zhangsan',
-    realName: '张三',
-    email: 'zhangsan@qq.com',
-    mobile: '13612345678',
-  },
-  {
-    id: '1',
-    username: 'zhangsan',
-    realName: '张三',
-    email: 'zhangsan@qq.com',
-    mobile: '13612345678',
-  },
-  {
-    id: '1',
-    username: 'zhangsan',
-    realName: '张三',
-    email: 'zhangsan@qq.com',
-    mobile: '13612345678',
-  },
-  {
-    id: '1',
-    username: 'zhangsan',
-    realName: '张三',
-    email: 'zhangsan@qq.com',
-    mobile: '13612345678',
-  },
-  {
-    id: '1',
-    username: 'zhangsan',
-    realName: '张三',
-    email: 'zhangsan@qq.com',
-    mobile: '13612345678',
-  },
-  {
-    id: '1',
-    username: 'zhangsan',
-    realName: '张三',
-    email: 'zhangsan@qq.com',
-    mobile: '13612345678',
-  },
-  {
-    id: '1',
-    username: 'zhangsan',
-    realName: '张三',
-    email: 'zhangsan@qq.com',
-    mobile: '13612345678',
-  },
-  {
-    id: '1',
-    username: 'zhangsan',
-    realName: '张三',
-    email: 'zhangsan@qq.com',
-    mobile: '13612345678',
-  },
+    status: EStatus.START,
+    createTime: Date.now(),
+    updateTime: Date.now(),
+  }
 ]
