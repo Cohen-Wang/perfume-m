@@ -1,5 +1,7 @@
 <script lang="ts" setup>
 import {ref} from 'vue'
+import NavBar from './components/NavBar.vue'
+import SideBar from './components/SideBar.vue'
 // +--------------------------------------------------
 // | data
 // +--------------------------------------------------
@@ -10,14 +12,21 @@ import {ref} from 'vue'
 </script>
 
 <template>
-  <n-layout has-sider>
-    <n-layout-sider content-style="padding: 24px;" class="bg-amber-100">
-      海淀桥
-    </n-layout-sider>
-    <n-layout>
-      <n-layout-header class="bg-red-200">颐和园路</n-layout-header>
+  <n-layout>
+    <!-- 头部 -->
+    <n-layout-header style="box-shadow: 0 2px 5px #eee;">
+      <NavBar></NavBar>
+    </n-layout-header>
+    <n-layout has-sider>
+      <!-- 左边 -->
+      <n-layout-sider>
+        <SideBar></SideBar>
+      </n-layout-sider>
+      <!-- 右边 -->
       <n-layout-content>
-        <router-view/>
+        <div class="bg-gray-100 p-3">
+          <router-view/>
+        </div>
       </n-layout-content>
     </n-layout>
   </n-layout>
