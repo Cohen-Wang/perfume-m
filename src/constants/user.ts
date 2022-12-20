@@ -1,6 +1,8 @@
 import { h } from 'vue'
-import { NButton, NSpace } from 'naive-ui'
+import { NButton, NSpace, NTag } from 'naive-ui'
+import moment from 'moment'
 import type { IUser } from '@/type/interface/user'
+import { EStatus } from '@/type/enum/common'
 // +--------------------------------------------------
 // | module - user
 // +--------------------------------------------------
@@ -20,6 +22,29 @@ export const DEFAULT_COLUMNS = [
   {
     title: '姓名',
     key: 'realName'
+  },
+  {
+    title: '状态',
+    key: 'status',
+    render(row: IUser) {
+      return h(NTag, {
+        type: 'success'
+      }, () => row.status)
+    }
+  },
+  {
+    title: '创建时间',
+    key: 'createTime',
+    render(row: IUser) {
+      return moment(row.createTime).format('YYYY-MM-DD HH:mm:ss')
+    }
+  },
+  {
+    title: '修改时间',
+    key: 'updateTime',
+    render(row: IUser) {
+      return moment(row.updateTime).format('YYYY-MM-DD HH:mm:ss')
+    }
   },
   {
     title: '操作',
@@ -70,6 +95,9 @@ export const DEFAULT_TABLE_DATA: IUser[] = [
     realName: '张三',
     email: 'zhangsan@qq.com',
     mobile: '13612345678',
+    status: EStatus.START,
+    createTime: Date.now(),
+    updateTime: Date.now(),
   },
   {
     id: '1',
