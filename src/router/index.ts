@@ -17,6 +17,10 @@ const routes:any = [
     component: Layout,
     children: [
       {
+        path: 'role',
+        component: () => import('@/views/management/role/Index.vue')
+      },
+      {
         path: 'user',
         component: () => import('@/views/management/user/Index.vue')
       }
