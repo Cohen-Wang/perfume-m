@@ -26,19 +26,26 @@ const FormRef = ref<FormInst | null>(null)
 // +--------------------------------------------------
 // | methods
 // +--------------------------------------------------
-// 点击确认
-const onConfirmClick = (): void => {
+const login = (): void => {
 	FormRef.value?.validate((errors: any) => {
 		if (errors) return
 		console.log('form', form)
 		router.push('/management/user')
 	})
 }
+// 回车
+const onKeyEnter = (): void => {
+	login()
+}
+// 点击确认
+const onConfirmClick = (): void => {
+	login()
+}
 </script>
 
 <template>
   <div class="w-full h-screen flex justify-center items-center login-bg">
-		<div class="w-1/5 p-3 shadow-md bg-white rounded-xl">
+		<div class="w-1/6 p-3 shadow-md bg-white rounded-md">
 			<!-- 标题 -->
 			<n-divider dashed>登录</n-divider>
 			<!-- 表单 -->
@@ -47,22 +54,20 @@ const onConfirmClick = (): void => {
 				<n-form-item path="username" label="用户名">
 					<n-input
 						v-model:value="form.username"
-						minlength="8"
-						maxlength="30"
+						maxlength="20"
 						show-count
 						placeholder="请输入"
-						@keydown.enter.prevent
+						@keydown.enter.prevent="onKeyEnter"
 					/>
 				</n-form-item>
 				<!-- 密码 -->
 				<n-form-item path="password" label="密码">
 					<n-input
 						v-model:value="form.password"
-						minlength="8"
-						maxlength="30"
+						maxlength="20"
 						show-count
 						placeholder="请输入"
-						@keydown.enter.prevent
+						@keydown.enter.prevent="onKeyEnter"
 					/>
 				</n-form-item>
 			</n-form>
@@ -73,6 +78,6 @@ const onConfirmClick = (): void => {
 
 <style lang="scss" scoped>
 .login-bg {
-	background: #ececec url(../../assets/svg/login.svg) no-repeat center 100px/100% ;
+	background: #fbfbfb url(../../assets/svg/login.svg) no-repeat center 100px/100% ;
 }
 </style>
