@@ -1,4 +1,5 @@
 import { EStatus } from '@/type/enum/common'
+import { EType as ERoleType } from '@/type/enum/role'
 // +--------------------------------------------------
 // | module - user
 // +--------------------------------------------------
@@ -10,6 +11,7 @@ export interface IUser {
   username: string // 名称
   realName: string // 姓名
   status: EStatus // 状态
+  role: ERoleType // 角色类型
   email?: string // 邮箱
   mobile?: string // 手机号
   createTime: Date // 创建日期

@@ -2,6 +2,7 @@ import { h } from 'vue'
 import { NButton, NSpace, NTag, NTime } from 'naive-ui'
 import type { IUser } from '@/type/interface/user'
 import { EStatus } from '@/type/enum/common'
+import { EType as ERoleType } from '@/type/enum/role'
 // +--------------------------------------------------
 // | module - user
 // +--------------------------------------------------
@@ -12,15 +13,17 @@ import { EStatus } from '@/type/enum/common'
 export const DEFAULT_COLUMNS = [
   {
     type: 'selection',
-    width: 55
-  },
-  {
-    title: 'ID',
-    key: 'id'
+    width: 55,
+    fixed: 'left'
   },
   {
     title: '用户名',
-    key: 'username'
+    key: 'username',
+    fixed: 'left'
+  },
+  {
+    title: '角色',
+    key: 'role'
   },
   {
     title: '姓名',
@@ -56,6 +59,7 @@ export const DEFAULT_COLUMNS = [
   {
     title: '操作',
     key: 'actions',
+    fixed: 'right',
     render (row: IUser) {
       return h(NSpace, null, [
         h(NButton, {
@@ -104,6 +108,7 @@ export const DEFAULT_TABLE_DATA: IUser[] = [
     id: '1',
     username: 'zhangsan',
     realName: '张三',
+    role: ERoleType.ADMINISTRATOR,
     email: 'zhangsan@qq.com',
     mobile: '13612345678',
     status: EStatus.START,
