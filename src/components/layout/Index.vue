@@ -30,11 +30,11 @@ import { BookOutline as BookIcon } from '@vicons/ionicons5'
 					<div class="mb-3">
 						<n-breadcrumb>
 							<n-breadcrumb-item>
-								<n-icon :component="BookIcon" /> 北京总行</n-breadcrumb-item>
+								<n-icon :component="BookIcon" /> <span>香水味管理平台</span></n-breadcrumb-item>
 							<n-breadcrumb-item>
-								<n-icon :component="BookIcon" /> 天津分行</n-breadcrumb-item>
+								<n-icon :component="BookIcon" /> <span>管理</span></n-breadcrumb-item>
 							<n-breadcrumb-item>
-								<n-icon :component="BookIcon" /> 平山道支行</n-breadcrumb-item>
+								<n-icon :component="BookIcon" /> <span>用户</span></n-breadcrumb-item>
 						</n-breadcrumb>
 					</div>
 					<!-- 视图 -->
