@@ -43,6 +43,19 @@ const routes:any = [
         meta: { title: '用户', icon: '' },
       }
     ]
+  },
+  {
+    path: '/report',
+    component: Layout,
+    meta: { title: '报表', icon: '' },
+    children: [
+      {
+        path: 'user',
+        name: 'user',
+        component: () => import(/* webpackChunkName: "user" */ '@/views/management/user/Index.vue'),
+        meta: { title: '用户', icon: '' },
+      }
+    ]
   }
 ]
 // +--------------------------------------------------
