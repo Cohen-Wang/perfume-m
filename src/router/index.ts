@@ -26,6 +26,12 @@ const routes:any = [
     ]
   },
   {
+    path: '/login',
+    name: 'login',
+    component: () => import(/* webpackChunkName: "login" */ '@/views/login/Index.vue'),
+    meta: { title: '登录', icon: '' }
+  },
+  {
     path: '/management',
     component: Layout,
     meta: { title: '管理', icon: '' },
