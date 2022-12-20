@@ -61,6 +61,7 @@ export const DEFAULT_COLUMNS = [
         h(NButton, {
           text: true,
           tag: 'a',
+          type: 'info',
           onClick: () => {
             alert(row.id)
           }}, { default: () => '编辑' },
@@ -68,6 +69,7 @@ export const DEFAULT_COLUMNS = [
         h(NButton, {
           text: true,
           tag: 'a',
+          type: 'info',
           onClick: () => {
             alert(row.id)
           }}, { default: () => '详情' },
@@ -75,6 +77,7 @@ export const DEFAULT_COLUMNS = [
         h(NButton, {
           text: true,
           tag: 'a',
+          type: 'info',
           onClick: () => {
             alert(row.id)
           }}, { default: () => '停用' },
@@ -82,6 +85,7 @@ export const DEFAULT_COLUMNS = [
         h(NButton, {
           text: true,
           tag: 'a',
+          type: 'info',
           onClick: () => {
             alert(row.id)
           }}, { default: () => '删除' },
