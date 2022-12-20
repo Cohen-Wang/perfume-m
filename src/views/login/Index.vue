@@ -1,9 +1,14 @@
 <script lang="ts" setup>
 import { reactive, ref } from 'vue'
+import { useRouter } from 'vue-router'
+import type { Router } from 'vue-router'
 import type { FormInst, FormRules } from 'naive-ui'
 // +--------------------------------------------------
 // | data
 // +--------------------------------------------------
+// 路由
+const router: Router = useRouter()
+// 表单
 const form = reactive({
 	username: '',
 	password: ''
@@ -26,13 +31,14 @@ const onConfirmClick = (): void => {
 	FormRef.value?.validate((errors: any) => {
 		if (errors) return
 		console.log('form', form)
+		router.push('/management/user')
 	})
 }
 </script>
 
 <template>
-  <div class="w-full h-screen bg flex justify-center items-center">
-		<div class="w-1/5 p-3 shadow-md">
+  <div class="w-full h-screen flex justify-center items-center login-bg">
+		<div class="w-1/5 p-3 shadow-md bg-white rounded-xl">
 			<!-- 标题 -->
 			<n-divider dashed>登录</n-divider>
 			<!-- 表单 -->
@@ -66,7 +72,7 @@ const onConfirmClick = (): void => {
 </template>
 
 <style lang="scss" scoped>
-.bg {
-	background: #ffffff url(../../assets/svg/login.svg) no-repeat center 100px/100% ;
+.login-bg {
+	background: #ececec url(../../assets/svg/login.svg) no-repeat center 100px/100% ;
 }
 </style>
