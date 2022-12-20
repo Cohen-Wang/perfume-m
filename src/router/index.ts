@@ -15,14 +15,17 @@ const routes:any = [
   {
     path: '/management',
     component: Layout,
+    meta: { title: '管理', icon: '' },
     children: [
       {
         path: 'role',
-        component: () => import('@/views/management/role/Index.vue')
+        component: () => import(/* webpackChunkName: "role" */ '@/views/management/role/Index.vue'),
+        meta: { title: '角色', icon: '' },
       },
       {
         path: 'user',
-        component: () => import('@/views/management/user/Index.vue')
+        component: () => import(/* webpackChunkName: "user" */ '@/views/management/user/Index.vue'),
+        meta: { title: '用户', icon: '' },
       }
     ]
   }

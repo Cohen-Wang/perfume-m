@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import { create, NButton} from 'naive-ui' // 必须再App.vue之前
+import { create, NButton } from 'naive-ui' // 必须再App.vue之前
 import naive from 'naive-ui'
 import App from './App.vue'
 // 引入【路由】
