@@ -1,6 +1,6 @@
 import { h } from 'vue'
 import { NButton } from 'naive-ui'
-import { IUser } from '@/type/interface/user'
+import type { IUser } from '@/type/interface/user'
 // +--------------------------------------------------
 // | module - user
 // +--------------------------------------------------

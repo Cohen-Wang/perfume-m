@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script lang="ts" setup name="LoginIndex">
 import { reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import type { Router } from 'vue-router'
@@ -26,20 +26,24 @@ const FormRef = ref<FormInst | null>(null)
 // +--------------------------------------------------
 // | methods
 // +--------------------------------------------------
+// 登录
 const login = (): void => {
+	router.push('/management/user')
+}
+// 登录事件
+const onLogin = (): void => {
 	FormRef.value?.validate((errors: any) => {
 		if (errors) return
-		console.log('form', form)
-		router.push('/management/user')
+		login()
 	})
 }
 // 回车
 const onKeyEnter = (): void => {
-	login()
+	onLogin()
 }
 // 点击确认
 const onConfirmClick = (): void => {
-	login()
+	onLogin()
 }
 </script>
 
