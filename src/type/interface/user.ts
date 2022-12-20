@@ -9,5 +9,5 @@ export interface IUser {
   username: string // 名称
   realName: string // 姓名
   email?: string // 邮箱
-  mobile: string // 手机号
+  mobile?: string // 手机号
 }

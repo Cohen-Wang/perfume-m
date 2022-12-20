@@ -1,25 +1,30 @@
 import { h } from 'vue'
 import { NButton } from 'naive-ui'
+import { IUser } from '@/type/interface/user'
 // +--------------------------------------------------
 // | module - user
 // +--------------------------------------------------
+/**
+ * 默认值
+ * 表头
+ */
 export const DEFAULT_COLUMNS = [
   {
     title: 'ID',
-    key: 'no'
+    key: 'id'
   },
   {
     title: '用户名',
-    key: 'title'
+    key: 'username'
   },
   {
     title: '姓名',
-    key: 'length'
+    key: 'realName'
   },
   {
     title: '操作',
     key: 'actions',
-    render (row) {
+    render (row: IUser) {
       return h(
         NButton,
         {
@@ -30,14 +35,22 @@ export const DEFAULT_COLUMNS = [
             alert(row.key)
           }
         },
-        { default: () => 'Play' }
+        { default: () => '编辑' }
       )
     }
   }
 ]
 
-export const DEFAULT_TABLE_DATA = [
-  { no: 3, title: 'Wonderwall', length: '4:18' },
-  { no: 4, title: "Don't Look Back in Anger", length: '4:48' },
-  { no: 12, title: 'Champagne Supernova', length: '7:27' }
+/**
+ * 默认值
+ * 用户数据
+ */
+export const DEFAULT_TABLE_DATA: IUser[] = [
+  {
+    id: '1',
+    username: 'zhangsan',
+    realName: '张三',
+    email: 'zhangsan@qq.com',
+    mobile: '13612345678',
+  }
 ]
