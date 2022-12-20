@@ -1,5 +1,5 @@
 import { h } from 'vue'
-import { NButton } from 'naive-ui'
+import { NButton, NSpace } from 'naive-ui'
 import type { IUser } from '@/type/interface/user'
 // +--------------------------------------------------
 // | module - user
@@ -25,18 +25,36 @@ export const DEFAULT_COLUMNS = [
     title: '操作',
     key: 'actions',
     render (row: IUser) {
-      return h(
-        NButton,
-        {
-          strong: true,
-          tertiary: true,
-          size: 'small',
+      return h(NSpace, null, [
+        h(NButton, {
+          text: true,
+          tag: 'a',
           onClick: () => {
-            alert(row.key)
-          }
-        },
-        { default: () => '编辑' }
-      )
+            alert(row.id)
+          }}, { default: () => '编辑' },
+        ),
+        h(NButton, {
+          text: true,
+          tag: 'a',
+          onClick: () => {
+            alert(row.id)
+          }}, { default: () => '详情' },
+        ),
+        h(NButton, {
+          text: true,
+          tag: 'a',
+          onClick: () => {
+            alert(row.id)
+          }}, { default: () => '停用' },
+        ),
+        h(NButton, {
+          text: true,
+          tag: 'a',
+          onClick: () => {
+            alert(row.id)
+          }}, { default: () => '删除' },
+        )
+      ])
     }
   }
 ]
