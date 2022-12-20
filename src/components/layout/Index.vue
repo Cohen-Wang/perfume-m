@@ -14,7 +14,7 @@ import SideBar from './components/SideBar.vue'
 <template>
   <n-layout>
     <!-- 头部 -->
-    <n-layout-header style="box-shadow: 0 2px 5px #eee;">
+    <n-layout-header class="shadow">
       <NavBar></NavBar>
     </n-layout-header>
     <n-layout has-sider>

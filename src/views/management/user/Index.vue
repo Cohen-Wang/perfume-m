@@ -43,15 +43,17 @@ const onAddClick = (): void => {
 
 <template>
   <!-- 控制栏 -->
-  <div class="p-1 mb-3 bg-white rounded">
+  <div class="p-3 mb-3 bg-white rounded shadow">
     <n-button type="info" @click="onAddClick">新增</n-button>
   </div>
   <!-- 表格 -->
-  <n-data-table
-      :columns="columns"
-      :data="tableData"
-      style="height: 500px;"
-      flex-height
-      bordered
-  />
+  <div class="p-3 mb-3 bg-white rounded shadow">
+		<n-data-table
+			:columns="columns"
+			:data="tableData"
+			style="height: 500px;"
+			flex-height
+			bordered
+		/>
+	</div>
 </template>
