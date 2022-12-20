@@ -10,7 +10,7 @@ import { ref } from 'vue'
 </script>
 
 <template>
-  <div>user</div>
+  <div class="test-border">user</div>
 </template>
 
 <style lang="scss" scoped>
