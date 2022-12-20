@@ -10,5 +10,9 @@ import { ref } from 'vue'
 </script>
 
 <template>
-  <div>home</div>
+  <div>user</div>
 </template>
+
+<style lang="scss" scoped>
+
+</style>
