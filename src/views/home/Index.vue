@@ -10,5 +10,7 @@ import { ref } from 'vue'
 </script>
 
 <template>
-  <div>home</div>
+  <div>
+		<span class="text-black text-2xl text-bold">home</span>
+	</div>
 </template>

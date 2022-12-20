@@ -13,17 +13,32 @@ const routes:any = [
     redirect: '/home'
   },
   {
+    path: '/home',
+    name: 'home',
+    component: Layout,
+    meta: { title: '首页', icon: '' },
+    children: [
+      {
+        path: 'home',
+        component: () => import(/* webpackChunkName: "home" */ '@/views/home/Index.vue'),
+        meta: { title: '首页', icon: '' },
+      }
+    ]
+  },
+  {
     path: '/management',
     component: Layout,
     meta: { title: '管理', icon: '' },
     children: [
       {
         path: 'role',
+        name: 'role',
         component: () => import(/* webpackChunkName: "role" */ '@/views/management/role/Index.vue'),
         meta: { title: '角色', icon: '' },
       },
       {
         path: 'user',
+        name: 'user',
         component: () => import(/* webpackChunkName: "user" */ '@/views/management/user/Index.vue'),
         meta: { title: '用户', icon: '' },
       }

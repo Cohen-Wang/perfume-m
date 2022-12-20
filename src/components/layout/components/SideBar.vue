@@ -17,23 +17,23 @@ function renderIcon (icon: Component) {
 }
 
 const menuOptions: MenuOption[] = [
-  // {
-  //   label: () =>
-  //       h(
-  //           RouterLink,
-  //           {
-  //             to: {
-  //               name: 'home',
-  //               params: {
-  //                 lang: 'zh-CN'
-  //               }
-  //             }
-  //           },
-  //           { default: () => '回家' }
-  //       ),
-  //   key: 'go-back-home',
-  //   icon: renderIcon(HomeIcon)
-  // },
+  {
+    label: () =>
+        h(
+            RouterLink,
+            {
+              to: {
+                name: 'home',
+                params: {
+                  lang: 'zh-CN'
+                }
+              }
+            },
+            { default: () => '首页' }
+        ),
+    key: 'go-back-home',
+    icon: renderIcon(HomeIcon)
+  },
   {
     label: () =>
         h(
@@ -67,7 +67,7 @@ const menuOptions: MenuOption[] = [
     disabled: true
   },
   {
-    label: '舞，舞，舞',
+    label: '管理',
     key: 'dance-dance-dance',
     icon: renderIcon(BookIcon),
     children: [
@@ -110,9 +110,13 @@ const menuOptions: MenuOption[] = [
         ]
       },
       {
-        label: '过去增多，未来减少',
+        label: '角色',
         key: 'the-past-increases-the-future-recedes'
-      }
+      },
+			{
+				label: '用户',
+				key: 'the-past-increases-the-future-recedes'
+			}
     ]
   }
 ]

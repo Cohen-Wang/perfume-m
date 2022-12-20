@@ -43,7 +43,7 @@ const onAddClick = (): void => {
 
 <template>
   <!-- 控制栏 -->
-  <div class="p-1 test-border mb-3">
+  <div class="p-1 mb-3 bg-white rounded">
     <n-button type="info" @click="onAddClick">新增</n-button>
   </div>
   <!-- 表格 -->
