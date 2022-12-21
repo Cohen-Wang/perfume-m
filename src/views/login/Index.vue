@@ -49,7 +49,7 @@ const onConfirmClick = (): void => {
 
 <template>
   <div class="w-full h-screen flex justify-center items-center login-bg">
-		<div class="w-1/6 p-3 shadow-md bg-white rounded-md">
+		<div class="w-1/6 p-3 border border-solid border-gray-200 shadow-md bg-white rounded-md">
 			<!-- 标题 -->
 			<n-divider dashed>登录</n-divider>
 			<!-- 表单 -->
