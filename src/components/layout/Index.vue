@@ -30,7 +30,7 @@ import { BookOutline as BookIcon } from '@vicons/ionicons5'
       </n-layout-sider>
       <!-- 右边 -->
       <n-layout-content>
-        <div class="bg-gray-100 p-3 main-height">
+        <div class="bg-gray-50 p-3 main-height">
 					<!-- 面包屑 -->
 					<div class="mb-3">
 						<n-breadcrumb>
