@@ -1,5 +1,6 @@
 import { h } from 'vue'
 import { NButton, NSpace, NTag, NTime } from 'naive-ui'
+import type { DataTableColumns, DataTableRowKey } from 'naive-ui'
 import type { IUser } from '@/type/interface/user'
 import { EStatus } from '@/type/enum/common'
 import { EType as ERoleType } from '@/type/enum/role'
@@ -10,7 +11,7 @@ import { EType as ERoleType } from '@/type/enum/role'
  * 默认值
  * 表头
  */
-export const DEFAULT_COLUMNS = [
+export const DEFAULT_COLUMNS: DataTableColumns<IUser> = [
   {
     type: 'selection',
     width: 55,
@@ -19,19 +20,38 @@ export const DEFAULT_COLUMNS = [
   {
     title: '用户名',
     key: 'username',
-    fixed: 'left'
+    fixed: 'left',
+    minWidth: 200
   },
   {
     title: '角色',
-    key: 'role'
+    key: 'role',
+    minWidth: 200
   },
   {
     title: '姓名',
-    key: 'realName'
+    key: 'realName',
+    minWidth: 200,
+  },
+  {
+    title: '商品数量',
+    key: 'commodityNum',
+    minWidth: 200,
+  },
+  {
+    title: '举报次数',
+    key: 'complaintNum',
+    minWidth: 200,
+  },
+  {
+    title: '被举报次数',
+    key: 'complainedNum',
+    minWidth: 200,
   },
   {
     title: '状态',
     key: 'status',
+    minWidth: 200,
     render(row: IUser) {
       return h(NTag, {
         type: 'success'
@@ -41,6 +61,7 @@ export const DEFAULT_COLUMNS = [
   {
     title: '创建时间',
     key: 'createTime',
+    minWidth: 200,
     render(row: IUser) {
       return h(NTime, {
         time: row.createTime
@@ -111,6 +132,9 @@ export const DEFAULT_TABLE_DATA: IUser[] = [
     role: ERoleType.ADMINISTRATOR,
     email: 'zhangsan@qq.com',
     mobile: '13612345678',
+    commodityNum: 999,
+    complaintNum: 999,
+    complainedNum: 999,
     status: EStatus.START,
     createTime: Date.now(),
     updateTime: Date.now(),
@@ -119,8 +143,12 @@ export const DEFAULT_TABLE_DATA: IUser[] = [
     id: '2',
     username: 'zhangsan',
     realName: '张三',
+    role: ERoleType.ADMINISTRATOR,
     email: 'zhangsan@qq.com',
     mobile: '13612345678',
+    commodityNum: 999,
+    complaintNum: 999,
+    complainedNum: 999,
     status: EStatus.START,
     createTime: Date.now(),
     updateTime: Date.now(),
@@ -129,10 +157,170 @@ export const DEFAULT_TABLE_DATA: IUser[] = [
     id: '3',
     username: 'zhangsan',
     realName: '张三',
+    role: ERoleType.ADMINISTRATOR,
     email: 'zhangsan@qq.com',
     mobile: '13612345678',
+    commodityNum: 999,
+    complaintNum: 999,
+    complainedNum: 999,
     status: EStatus.START,
     createTime: Date.now(),
     updateTime: Date.now(),
-  }
+  },{
+    id: '3',
+    username: 'zhangsan',
+    realName: '张三',
+    role: ERoleType.ADMINISTRATOR,
+    email: 'zhangsan@qq.com',
+    mobile: '13612345678',
+    commodityNum: 999,
+    complaintNum: 999,
+    complainedNum: 999,
+    status: EStatus.START,
+    createTime: Date.now(),
+    updateTime: Date.now(),
+  },{
+    id: '3',
+    username: 'zhangsan',
+    realName: '张三',
+    role: ERoleType.ADMINISTRATOR,
+    email: 'zhangsan@qq.com',
+    mobile: '13612345678',
+    commodityNum: 999,
+    complaintNum: 999,
+    complainedNum: 999,
+    status: EStatus.START,
+    createTime: Date.now(),
+    updateTime: Date.now(),
+  },{
+    id: '3',
+    username: 'zhangsan',
+    realName: '张三',
+    role: ERoleType.ADMINISTRATOR,
+    email: 'zhangsan@qq.com',
+    mobile: '13612345678',
+    commodityNum: 999,
+    complaintNum: 999,
+    complainedNum: 999,
+    status: EStatus.START,
+    createTime: Date.now(),
+    updateTime: Date.now(),
+  },{
+    id: '3',
+    username: 'zhangsan',
+    realName: '张三',
+    role: ERoleType.ADMINISTRATOR,
+    email: 'zhangsan@qq.com',
+    mobile: '13612345678',
+    commodityNum: 999,
+    complaintNum: 999,
+    complainedNum: 999,
+    status: EStatus.START,
+    createTime: Date.now(),
+    updateTime: Date.now(),
+  },{
+    id: '3',
+    username: 'zhangsan',
+    realName: '张三',
+    role: ERoleType.ADMINISTRATOR,
+    email: 'zhangsan@qq.com',
+    mobile: '13612345678',
+    commodityNum: 999,
+    complaintNum: 999,
+    complainedNum: 999,
+    status: EStatus.START,
+    createTime: Date.now(),
+    updateTime: Date.now(),
+  },{
+    id: '3',
+    username: 'zhangsan',
+    realName: '张三',
+    role: ERoleType.ADMINISTRATOR,
+    email: 'zhangsan@qq.com',
+    mobile: '13612345678',
+    commodityNum: 999,
+    complaintNum: 999,
+    complainedNum: 999,
+    status: EStatus.START,
+    createTime: Date.now(),
+    updateTime: Date.now(),
+  },{
+    id: '3',
+    username: 'zhangsan',
+    realName: '张三',
+    role: ERoleType.ADMINISTRATOR,
+    email: 'zhangsan@qq.com',
+    mobile: '13612345678',
+    commodityNum: 999,
+    complaintNum: 999,
+    complainedNum: 999,
+    status: EStatus.START,
+    createTime: Date.now(),
+    updateTime: Date.now(),
+  },{
+    id: '3',
+    username: 'zhangsan',
+    realName: '张三',
+    role: ERoleType.ADMINISTRATOR,
+    email: 'zhangsan@qq.com',
+    mobile: '13612345678',
+    commodityNum: 999,
+    complaintNum: 999,
+    complainedNum: 999,
+    status: EStatus.START,
+    createTime: Date.now(),
+    updateTime: Date.now(),
+  },{
+    id: '3',
+    username: 'zhangsan',
+    realName: '张三',
+    role: ERoleType.ADMINISTRATOR,
+    email: 'zhangsan@qq.com',
+    mobile: '13612345678',
+    commodityNum: 999,
+    complaintNum: 999,
+    complainedNum: 999,
+    status: EStatus.START,
+    createTime: Date.now(),
+    updateTime: Date.now(),
+  },{
+    id: '3',
+    username: 'zhangsan',
+    realName: '张三',
+    role: ERoleType.ADMINISTRATOR,
+    email: 'zhangsan@qq.com',
+    mobile: '13612345678',
+    commodityNum: 999,
+    complaintNum: 999,
+    complainedNum: 999,
+    status: EStatus.START,
+    createTime: Date.now(),
+    updateTime: Date.now(),
+  },{
+    id: '3',
+    username: 'zhangsan',
+    realName: '张三',
+    role: ERoleType.ADMINISTRATOR,
+    email: 'zhangsan@qq.com',
+    mobile: '13612345678',
+    commodityNum: 999,
+    complaintNum: 999,
+    complainedNum: 999,
+    status: EStatus.START,
+    createTime: Date.now(),
+    updateTime: Date.now(),
+  },{
+    id: '3',
+    username: 'zhangsan',
+    realName: '张三',
+    role: ERoleType.ADMINISTRATOR,
+    email: 'zhangsan@qq.com',
+    mobile: '13612345678',
+    commodityNum: 999,
+    complaintNum: 999,
+    complainedNum: 999,
+    status: EStatus.START,
+    createTime: Date.now(),
+    updateTime: Date.now(),
+  },
 ]

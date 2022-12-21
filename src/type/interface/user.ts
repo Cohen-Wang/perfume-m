@@ -14,9 +14,9 @@ export interface IUser {
   role: ERoleType // 角色类型
   email?: string // 邮箱
   mobile?: string // 手机号
-  commodity: number // 商品数量
-  complaints: number // 投诉
-  complained: number // 被偷书
+  commodityNum: number // 商品数量
+  complaintNum: number // 投诉次数
+  complainedNum: number // 被投诉次数
   createTime: Date // 创建日期
   updateTime: Date // 修改
 }

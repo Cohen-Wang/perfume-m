@@ -59,6 +59,8 @@ const handleCheck = (rowKeys: DataTableRowKey[]): void => {
 			:single-line="false"
 			style="height: calc(100vh - 250px);"
 			flex-height
+			:scroll-x="1800"
+			striped
 			@update:checked-row-keys="handleCheck"
 		/>
 	</div>
