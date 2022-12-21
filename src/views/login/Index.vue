@@ -3,6 +3,7 @@ import { reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import type { Router } from 'vue-router'
 import type { FormInst, FormRules } from 'naive-ui'
+import { People, LockClosed } from '@vicons/ionicons5'
 // +--------------------------------------------------
 // | data
 // +--------------------------------------------------
@@ -59,20 +60,28 @@ const onConfirmClick = (): void => {
 					<n-input
 						v-model:value="form.username"
 						maxlength="20"
-						show-count
 						placeholder="请输入"
 						@keydown.enter.prevent="onKeyEnter"
-					/>
+					>
+						<template #prefix>
+							<n-icon :component="People" />
+						</template>
+					</n-input>
 				</n-form-item>
 				<!-- 密码 -->
 				<n-form-item path="password" label="密码">
 					<n-input
 						v-model:value="form.password"
+						type="password"
+						show-password-on="mousedown"
 						maxlength="20"
-						show-count
 						placeholder="请输入"
 						@keydown.enter.prevent="onKeyEnter"
-					/>
+					>
+						<template #prefix>
+							<n-icon :component="LockClosed" />
+						</template>
+					</n-input>
 				</n-form-item>
 			</n-form>
 			<n-button type="primary" class="w-full" @click="onConfirmClick">确认</n-button>
