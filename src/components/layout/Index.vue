@@ -15,12 +15,17 @@ import { BookOutline as BookIcon } from '@vicons/ionicons5'
 <template>
   <n-layout>
     <!-- 头部 -->
-    <n-layout-header class="border-b-2 border-solid border-gray-400">
+    <n-layout-header bordered>
       <NavBar />
     </n-layout-header>
     <n-layout has-sider>
       <!-- 左边 -->
-      <n-layout-sider>
+      <n-layout-sider
+				collapse-mode="width"
+				:width="240"
+				show-trigger="arrow-circle"
+				bordered
+			>
         <SideBar />
       </n-layout-sider>
       <!-- 右边 -->
