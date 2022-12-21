@@ -80,6 +80,11 @@ const routes:any = [
     name: '500',
     component: () => import(/* webpackChunkName: "404" */ '@/views/redirect/500.vue'),
     meta: { title: '500', icon: '' }
+  },
+  {
+    path: '/:pathMatch(.*)',
+    meta: { isShow: false, isRequireLogin: false },
+    redirect: '/404'
   }
 ]
 // +--------------------------------------------------
