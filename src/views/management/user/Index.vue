@@ -1,9 +1,11 @@
 <script lang="ts" setup>
 import { reactive, onMounted } from 'vue'
 import { useNotification } from 'naive-ui'
+import { Add } from '@vicons/ionicons5'
 import type { DataTableColumns, DataTableRowKey } from 'naive-ui'
 import { IUser } from '@/type/interface/user'
 import { DEFAULT_COLUMNS, DEFAULT_TABLE_DATA } from '@/constants/user'
+
 // +--------------------------------------------------
 // | data
 // +--------------------------------------------------
@@ -48,7 +50,10 @@ const handleCheck = (rowKeys: DataTableRowKey[]): void => {
 <template>
   <!-- 控制栏 -->
   <div class="p-3 mb-3 bg-white rounded shadow">
-    <n-button type="info" @click="onAddClick">新增</n-button>
+		<!-- 新增 -->
+    <n-button type="info" :loading="true" @click="onAddClick">
+			<template #icon><n-icon><add /></n-icon></template><span>新增</span>
+		</n-button>
   </div>
   <!-- 表格 -->
   <div class="p-3 mb-3 bg-white rounded shadow">
