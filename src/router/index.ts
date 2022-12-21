@@ -62,6 +62,24 @@ const routes:any = [
     name: 'login',
     component: () => import(/* webpackChunkName: "login" */ '@/views/login/Index.vue'),
     meta: { title: '登录', icon: '' }
+  },
+  {
+    path: '/404',
+    name: '404',
+    component: () => import(/* webpackChunkName: "404" */ '@/views/redirect/404.vue'),
+    meta: { title: '404', icon: '' }
+  },
+  {
+    path: '/403',
+    name: '403',
+    component: () => import(/* webpackChunkName: "403" */ '@/views/redirect/403.vue'),
+    meta: { title: '403', icon: '' }
+  },
+  {
+    path: '/500',
+    name: '500',
+    component: () => import(/* webpackChunkName: "404" */ '@/views/redirect/500.vue'),
+    meta: { title: '500', icon: '' }
   }
 ]
 // +--------------------------------------------------
