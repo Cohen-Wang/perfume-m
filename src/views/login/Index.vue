@@ -3,7 +3,7 @@ import { reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import type { Router } from 'vue-router'
 import type { FormInst, FormRules } from 'naive-ui'
-import { People, LockClosed } from '@vicons/ionicons5'
+import { PersonOutline, LockClosedOutline } from '@vicons/ionicons5'
 // +--------------------------------------------------
 // | data
 // +--------------------------------------------------
@@ -64,7 +64,7 @@ const onConfirmClick = (): void => {
 						@keydown.enter.prevent="onKeyEnter"
 					>
 						<template #prefix>
-							<n-icon :component="People" />
+							<n-icon :component="PersonOutline" />
 						</template>
 					</n-input>
 				</n-form-item>
@@ -79,7 +79,7 @@ const onConfirmClick = (): void => {
 						@keydown.enter.prevent="onKeyEnter"
 					>
 						<template #prefix>
-							<n-icon :component="LockClosed" />
+							<n-icon :component="LockClosedOutline" />
 						</template>
 					</n-input>
 				</n-form-item>
