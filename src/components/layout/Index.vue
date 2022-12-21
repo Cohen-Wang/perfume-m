@@ -30,7 +30,7 @@ import { BookOutline as BookIcon } from '@vicons/ionicons5'
       </n-layout-sider>
       <!-- 右边 -->
       <n-layout-content>
-        <div class="bg-gray-100 p-3">
+        <div class="bg-gray-100 p-3 main-height">
 					<!-- 面包屑 -->
 					<div class="mb-3">
 						<n-breadcrumb>
@@ -49,3 +49,10 @@ import { BookOutline as BookIcon } from '@vicons/ionicons5'
     </n-layout>
   </n-layout>
 </template>
+
+<style lang="scss" scoped>
+.main-height {
+	height: calc(100vh - 75px);
+	overflow-y: auto;
+}
+</style>
