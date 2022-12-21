@@ -38,9 +38,14 @@ const handleSelect  = (key: string): void => {
 			</div>
 			<!-- 右边 -->
 			<div class="flex items-center">
-				<n-button text style="font-size: 20px" class="mr-3">
-					<n-icon><MailOutline /></n-icon>
-				</n-button>
+				<div class="mr-10">
+					<n-badge :value="300" max="99">
+						<n-button text style="font-size: 20px">
+							<n-icon><MailOutline /></n-icon>
+						</n-button>
+					</n-badge>
+				</div>
+
 				<span class="mr-3">你好，Cohen</span>
 				<n-dropdown trigger="hover" :options="options" @select="handleSelect">
 					<n-avatar
