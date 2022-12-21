@@ -19,17 +19,11 @@ const routes:any = [
     meta: { title: '首页', icon: '' },
     children: [
       {
-        path: 'home',
+        path: '',
         component: () => import(/* webpackChunkName: "home" */ '@/views/home/Index.vue'),
         meta: { title: '首页', icon: '' },
       }
     ]
-  },
-  {
-    path: '/login',
-    name: 'login',
-    component: () => import(/* webpackChunkName: "login" */ '@/views/login/Index.vue'),
-    meta: { title: '登录', icon: '' }
   },
   {
     path: '/management',
@@ -62,6 +56,12 @@ const routes:any = [
         meta: { title: '用户', icon: '' },
       }
     ]
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import(/* webpackChunkName: "login" */ '@/views/login/Index.vue'),
+    meta: { title: '登录', icon: '' }
   }
 ]
 // +--------------------------------------------------
