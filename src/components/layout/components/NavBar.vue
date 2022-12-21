@@ -45,7 +45,6 @@ const handleSelect  = (key: string): void => {
 				<n-dropdown trigger="hover" :options="options" @select="handleSelect">
 					<n-avatar
 						size="small"
-						round
 						class="cursor-pointer"
 						src="https://cohen_wang.gitee.io/resume/img/yingmuhuadao.6337eff1.jpg"
 					/>
