@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 // +--------------------------------------------------
 // | 用户
 // +--------------------------------------------------
-export const useUserStore = defineStore('user', {
+export default defineStore('user', {
   state: () => {
     return {
       userInfo: {

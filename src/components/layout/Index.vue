@@ -1,15 +1,19 @@
 <script lang="ts" setup>
-import {ref} from 'vue'
 import { HomeOutline } from '@vicons/ionicons5'
+import useLayoutStore from '@/store/useLayoutStore'
 import NavBar from './components/NavBar.vue'
 import SideBar from './components/SideBar.vue'
 // +--------------------------------------------------
 // | data
 // +--------------------------------------------------
-
+const layoutStore = useLayoutStore()
 // +--------------------------------------------------
 // | methods
 // +--------------------------------------------------
+// 折叠侧边栏
+const onCollapsedChange = (collapsed: boolean): void => {
+	layoutStore.setCollapsed(collapsed)
+}
 </script>
 
 <template>
@@ -21,10 +25,12 @@ import SideBar from './components/SideBar.vue'
     <n-layout has-sider>
       <!-- 左边 -->
       <n-layout-sider
+				:collapsed="layoutStore.collapsed"
 				collapse-mode="width"
 				:width="240"
 				show-trigger="arrow-circle"
 				bordered
+				@update:collapsed="onCollapsedChange"
 			>
         <SideBar />
       </n-layout-sider>

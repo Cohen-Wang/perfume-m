@@ -1,11 +1,11 @@
 import { createApp } from 'vue'
 import { create, NButton } from 'naive-ui' // 必须再App.vue之前
 import naive from 'naive-ui'
+// 引入【pinia】
+import { createPinia } from 'pinia'
 import App from './App.vue'
 // 引入【路由】
 import router from '@/router'
-// 引入【pinia】
-import { createPinia } from 'pinia'
 // 引入【样式】
 import '@/style/style.css'
 import '@/style/tailwind.css'
