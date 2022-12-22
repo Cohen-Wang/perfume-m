@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import {ref} from 'vue'
+import { HomeOutline } from '@vicons/ionicons5'
 import NavBar from './components/NavBar.vue'
 import SideBar from './components/SideBar.vue'
-import { BookOutline as BookIcon } from '@vicons/ionicons5'
 // +--------------------------------------------------
 // | data
 // +--------------------------------------------------
@@ -34,12 +34,9 @@ import { BookOutline as BookIcon } from '@vicons/ionicons5'
 					<!-- 面包屑 -->
 					<div class="mb-3">
 						<n-breadcrumb>
-							<n-breadcrumb-item>
-								<n-icon :component="BookIcon" /> <span>香水味管理平台</span></n-breadcrumb-item>
-							<n-breadcrumb-item>
-								<n-icon :component="BookIcon" /> <span>管理</span></n-breadcrumb-item>
-							<n-breadcrumb-item>
-								<n-icon :component="BookIcon" /> <span>用户</span></n-breadcrumb-item>
+							<n-breadcrumb-item><n-icon :component="HomeOutline" /> <span>香水味管理平台</span></n-breadcrumb-item>
+							<n-breadcrumb-item><span>管理</span></n-breadcrumb-item>
+							<n-breadcrumb-item><span>用户</span></n-breadcrumb-item>
 						</n-breadcrumb>
 					</div>
 					<!-- 视图 -->

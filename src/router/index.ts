@@ -65,21 +65,21 @@ const routes:any = [
   },
   {
     path: '/404',
-    name: '404',
+    name: 'not-found',
     component: () => import(/* webpackChunkName: "404" */ '@/views/redirect/404.vue'),
-    meta: { title: '404', icon: '' }
+    meta: { isShow: false, isRequireLogin: false }
   },
   {
     path: '/403',
-    name: '403',
+    name: 'forbidden',
     component: () => import(/* webpackChunkName: "403" */ '@/views/redirect/403.vue'),
-    meta: { title: '403', icon: '' }
+    meta: { isShow: false, isRequireLogin: false }
   },
   {
     path: '/500',
-    name: '500',
+    name: 'server-error',
     component: () => import(/* webpackChunkName: "404" */ '@/views/redirect/500.vue'),
-    meta: { title: '500', icon: '' }
+    meta: { isShow: false, isRequireLogin: false }
   },
   {
     path: '/:pathMatch(.*)',
