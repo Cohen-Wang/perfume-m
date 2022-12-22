@@ -10,12 +10,10 @@ export default defineStore('layout', {
     }
   },
   getters: {
-    collapsed() {
-      return this.collapsed
-    }
+    // ...
   },
   actions: {
-    setCollapsed(payload: any) {
+    setCollapsed(payload: boolean) {
       this.collapsed = payload
       local.set({
         name: 'collapsed',
