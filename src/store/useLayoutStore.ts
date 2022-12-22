@@ -10,7 +10,9 @@ export default defineStore('layout', {
     }
   },
   getters: {
-    // ...
+    getCollapsed(state): boolean {
+      return !!state.collapsed
+    }
   },
   actions: {
     setCollapsed(payload: boolean) {
