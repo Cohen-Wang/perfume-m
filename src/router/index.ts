@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
 import { getBreadCrumbItems } from '@/utils/routes'
+import { BookOutline } from '@vicons/ionicons5'
 import Layout from '@/components/layout/Index.vue'
 // +--------------------------------------------------
 // | DEBUG
@@ -8,7 +9,7 @@ const DEBUG: boolean = true
 // +--------------------------------------------------
 // | routes
 // +--------------------------------------------------
-const routes: any = [
+export const routes: any = [
   {
     path: '/',
     redirect: '/home'
@@ -17,44 +18,44 @@ const routes: any = [
     path: '/home',
     name: 'home',
     component: Layout,
-    meta: { title: '首页', icon: '' },
+    meta: { title: '首页', icon: BookOutline, isShow: true, isRequireLogin: true },
     children: [
       {
         path: '',
         component: () => import(/* webpackChunkName: "home" */ '@/views/home/Index.vue'),
-        meta: { title: '首页', icon: '' },
+        meta: { title: '首页', icon: BookOutline, isShow: true, isRequireLogin: true },
       }
     ]
   },
   {
     path: '/management',
     component: Layout,
-    meta: { title: '管理', icon: '' },
+    meta: { title: '应用管理', icon: BookOutline, isShow: true, isRequireLogin: true },
     children: [
       {
         path: 'role',
         name: 'role',
         component: () => import(/* webpackChunkName: "role" */ '@/views/management/role/Index.vue'),
-        meta: { title: '角色管理', icon: '' },
+        meta: { title: '角色管理', icon: BookOutline, isShow: true, isRequireLogin: true },
       },
       {
         path: 'user',
         name: 'user',
         component: () => import(/* webpackChunkName: "user" */ '@/views/management/user/Index.vue'),
-        meta: { title: '用户管理', icon: '' },
+        meta: { title: '用户管理', icon: BookOutline, isShow: true, isRequireLogin: true },
       }
     ]
   },
   {
     path: '/report',
     component: Layout,
-    meta: { title: '报表', icon: '' },
+    meta: { title: '报表', icon: BookOutline, isShow: true, isRequireLogin: true },
     children: [
       {
         path: 'user1',
         name: 'user1',
         component: () => import(/* webpackChunkName: "user" */ '@/views/management/user/Index.vue'),
-        meta: { title: '用户', icon: '' },
+        meta: { title: '用户', icon: BookOutline, isShow: true, isRequireLogin: true },
       }
     ]
   },
@@ -62,7 +63,7 @@ const routes: any = [
     path: '/login',
     name: 'login',
     component: () => import(/* webpackChunkName: "login" */ '@/views/login/Index.vue'),
-    meta: { title: '登录', icon: '' }
+    meta: { title: '登录', icon: BookOutline, isShow: false, isRequireLogin: false }
   },
   {
     path: '/404',
