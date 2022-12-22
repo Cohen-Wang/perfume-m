@@ -30,7 +30,6 @@ const getMenuOptions = (routes: any): any => {
 }
 
 const menuOptions: any = getMenuOptions(routes)
-console.log('menuOptions', menuOptions)
 // 点击事件
 const handleUpdateValue = (key: string, item: MenuOption): void => {
   console.log(key, item)
