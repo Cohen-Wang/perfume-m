@@ -4,7 +4,7 @@ import { useNotification } from 'naive-ui'
 import { Add } from '@vicons/ionicons5'
 import type { DataTableColumns, DataTableRowKey } from 'naive-ui'
 import type { IUser } from '@/type/interface/user'
-import { DEFAULT_COLUMNS, DEFAULT_TABLE_DATA } from '@/constants/user'
+import { DEFAULT_COLUMNS } from '@/constants/user'
 import { getList as getListApi } from '@/service/modules/user'
 // +--------------------------------------------------
 // | data
@@ -34,7 +34,7 @@ const getList = (): void => {
 	isLoading.value = true
 	getListApi().then((res: any) => {
 		tableData.length = 0
-		tableData.push(...DEFAULT_TABLE_DATA)
+		tableData.push(...res.data.data)
 	}).finally(() => {
 		isLoading.value = false
 	})
@@ -56,7 +56,7 @@ const handleCheck = (rowKeys: DataTableRowKey[]): void => {
   <!-- 控制栏 -->
   <div class="p-3 mb-3 bg-white rounded shadow">
 		<!-- 新增 -->
-    <n-button type="info" :loading="true" @click="onAddClick">
+    <n-button type="info" :loading="isLoading" @click="onAddClick">
 			<template #icon><n-icon><add /></n-icon></template><span>新增</span>
 		</n-button>
   </div>
@@ -66,6 +66,7 @@ const handleCheck = (rowKeys: DataTableRowKey[]): void => {
 			:columns="columns"
 			:data="tableData"
 			:row-key="rowKey"
+			:loading="isLoading"
 			:single-line="false"
 			style="height: calc(100vh - 250px);"
 			flex-height
