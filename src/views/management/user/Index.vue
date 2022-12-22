@@ -1,16 +1,17 @@
 <script lang="ts" setup>
-import { reactive, onMounted } from 'vue'
+import { reactive, onMounted, ref, Ref } from 'vue'
 import { useNotification } from 'naive-ui'
 import { Add } from '@vicons/ionicons5'
 import type { DataTableColumns, DataTableRowKey } from 'naive-ui'
-import { IUser } from '@/type/interface/user'
+import type { IUser } from '@/type/interface/user'
 import { DEFAULT_COLUMNS, DEFAULT_TABLE_DATA } from '@/constants/user'
-
+import { getList as getListApi } from '@/service/modules/user'
 // +--------------------------------------------------
 // | data
 // +--------------------------------------------------
 // 辅助
 const notification = useNotification()
+const isLoading: Ref<boolean> = ref(false)
 // 数据
 const columns: DataTableColumns<IUser> = DEFAULT_COLUMNS
 const tableData: IUser[] = reactive([])
@@ -30,9 +31,13 @@ const init = (): void => {
 }
 // 请求列表数据
 const getList = (): void => {
-  setTimeout(() => {
-    tableData.push(...DEFAULT_TABLE_DATA)
-  }, 200)
+	isLoading.value = true
+	getListApi().then((res: any) => {
+		tableData.length = 0
+		tableData.push(...DEFAULT_TABLE_DATA)
+	}).finally(() => {
+		isLoading.value = false
+	})
 }
 // 点击新增
 const onAddClick = (): void => {

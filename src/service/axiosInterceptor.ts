@@ -1,13 +1,14 @@
 import axios, { AxiosResponse, AxiosRequestConfig } from 'axios'
-import { local } from '@/utils'
-import { message } from 'ant-design-vue'
+// import { local } from '@/utils'
+// import { message } from 'ant-design-vue'
 
 // 超时时间
 axios.defaults.timeout = 15 * 1000
 // 跨域请求，允许保存cookie
 axios.defaults.withCredentials = true
 // 地址
-axios.defaults.baseURL = process.env.VUE_APP_HOST
+// axios.defaults.baseURL = process.env.VUE_APP_HOST
+axios.defaults.baseURL = 'https://www.fastmock.site/mock/c08d9fdabbd1a035d99eadb674f60247/perfume-m'
 
 const whiteList: any = [
   `/login`
@@ -17,13 +18,13 @@ const whiteList: any = [
 axios.interceptors.request.use((config: AxiosRequestConfig) => {
 
   // Token
-  const token: string = local.get('access_token')
-  if (token && whiteList.indexOf(config.url) === -1) {
-    const authorization = config.headers['Authorization']
-    if (authorization === undefined || authorization.indexOf('Basic') === -1) {
-      config.headers['Authorization'] = 'Bearer ' + token // 让每个请求携带token
-    }
-  }
+  // const token: string = local.get('access_token')
+  // if (token && whiteList.indexOf(config.url) === -1) {
+  //   const authorization = config.headers['Authorization']
+  //   if (authorization === undefined || authorization.indexOf('Basic') === -1) {
+  //     config.headers['Authorization'] = 'Bearer ' + token // 让每个请求携带token
+  //   }
+  // }
   return config
 }, (error: any) => {
   return Promise.reject(error)
@@ -44,7 +45,7 @@ axios.interceptors.response.use((response: AxiosResponse) => {
 
   if (error.response) {
     const msg = error.response.data.message
-    message.error(msg, 4)
+    // message.error(msg, 4)
   }
 
 //   if (error.response) {
