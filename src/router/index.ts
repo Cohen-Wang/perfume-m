@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
+import { getBreadCrumbItems } from '@/utils/routes'
 import Layout from '@/components/layout/Index.vue'
 // +--------------------------------------------------
 // | DEBUG
@@ -7,7 +8,7 @@ const DEBUG: boolean = true
 // +--------------------------------------------------
 // | routes
 // +--------------------------------------------------
-const routes:any = [
+const routes: any = [
   {
     path: '/',
     redirect: '/home'
@@ -34,13 +35,13 @@ const routes:any = [
         path: 'role',
         name: 'role',
         component: () => import(/* webpackChunkName: "role" */ '@/views/management/role/Index.vue'),
-        meta: { title: '角色', icon: '' },
+        meta: { title: '角色管理', icon: '' },
       },
       {
         path: 'user',
         name: 'user',
         component: () => import(/* webpackChunkName: "user" */ '@/views/management/user/Index.vue'),
-        meta: { title: '用户', icon: '' },
+        meta: { title: '用户管理', icon: '' },
       }
     ]
   },
@@ -88,15 +89,35 @@ const routes:any = [
   }
 ]
 // +--------------------------------------------------
-// | router
+// | 实例化
 // +--------------------------------------------------
 const router = createRouter({
-  // vue3.0中，必须手动指定模式
-  // createWebHistory === history
-  // createWebHashHistory === hash
-  // createMemoryHistory
   history: DEBUG ? createWebHashHistory() : createWebHistory(),
   routes // 路由规则
 })
-
+// +--------------------------------------------------
+// | 拦截器
+// +--------------------------------------------------
+router.beforeEach((to: any, from: any, next: any) => {
+  const isLogin = true
+  if (isLogin) {
+    next()
+  } else {
+    if (to.matched.length > 0 && to.matched.every((item: any) => !item.meta.isRequireLogin)) {
+      next()
+    } else {
+      next('/login')
+    }
+  }
+  // 修改浏览器tab名称
+  // let breadCrumbItems: any = [{
+  //   path: '/',
+  //   title: process.env.VUE_APP_TITLE
+  // }]
+  // breadCrumbItems = getBreadCrumbItems(matched, breadCrumbItems
+  document.title = to.matched?.map((e: any) => e.meta?.title).join('/')
+})
+// +--------------------------------------------------
+// | 暴露
+// +--------------------------------------------------
 export default router
