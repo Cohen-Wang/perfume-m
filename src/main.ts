@@ -1,5 +1,4 @@
 import { createApp } from 'vue'
-import { create, NButton } from 'naive-ui' // 必须再App.vue之前
 import naive from 'naive-ui'
 // 引入【pinia】
 import { createPinia } from 'pinia'
