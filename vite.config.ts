@@ -1,4 +1,6 @@
+// 配置
 import { defineConfig, loadEnv } from 'vite'
+// Vue
 import vue from '@vitejs/plugin-vue'
 const { resolve } = require('path')
 // 插件
