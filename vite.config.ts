@@ -12,6 +12,7 @@ import vitePluginEslint from 'vite-plugin-eslint'
 // @ts-ignore
 export default defineConfig(({ mode }: any) => {
   const env = loadEnv(mode, process.cwd(), '')
+  console.log(env.VITE_APP_PORT)
   return {
     resolve: {
       alias: {
@@ -20,9 +21,9 @@ export default defineConfig(({ mode }: any) => {
     },
     // 代理服务
     server: {
+      host: '0.0.0.0',
+      port: env.VITE_APP_PORT || 3000,
       proxy: {
-        host: '0.0.0.0',
-        port: env.VITE_APP_PORT || 3000,
         '/api': {
           target: '',
           changeOrigin: true,
